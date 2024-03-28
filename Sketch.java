@@ -1,7 +1,11 @@
 import processing.core.PApplet;
 
 public class Sketch extends PApplet {
-	
+	/**
+ * Main class to execute sketch
+ * George D.
+ *
+ */
 	
   /**
    * Called once at the beginning of execution, put your size all in this method
@@ -16,7 +20,7 @@ public class Sketch extends PApplet {
    * values here i.e background, stroke, fill etc.
    */
   public void setup() {
-    background(45, 150, 207);
+    background(45, 150, 207); // sets background color
   }
 
   /**
@@ -55,18 +59,10 @@ public class Sketch extends PApplet {
     rect(900, 0, 300, 300);
   }
   
-  /**
-   * Draws the bottom left section
-   */
-  public void draw_section1() {
-    int intX = 0;
-    int intY = 0;
-
-    for (int intRow = 0; intRow < 30; intRow++) {
-      for (int intColumn = 0; intColumn < 30; intColumn++) {
-        intX = 3 + 0;  // Instead of zero, calculate the proper intX location using 'intRow'
-        intY = 300 + 3 + 0; // Instead of zero, calculate the proper intY location using 'intColumn'
-
+  
+  public void draw_section1() { // Prints section 1
+    for (int intX = 3; intX < 300; intX+=10) {
+      for (int intY = 303; intY < 600; intY+=10) {        
         fill(255);
         noStroke();
         rect(intX, intY, 5, 5);
@@ -74,46 +70,83 @@ public class Sketch extends PApplet {
     }
   }
 
-  /**
-   * Use the modulus operator and an if statement to select the color
-   * Don't loop from 30 to 60 to shift everything over, just add 300 to x.
-   */
-  public void draw_section2() {
-
+  public void draw_section2() { // Prints section 2
+    for (int intX = 3; intX < 300; intX+=10) {
+      for (int intY = 303; intY < 600; intY+=10) {
+        fill(255);
+        if ((intX / 10) % 2 == 1){
+          fill(0);
+        }
+        noStroke();
+        rect(intX + 300, intY, 5, 5);
+      }
+    }
   }
 
-  /**
-   * Use the modulus operator and an if/else statement to select the color.
-   * Don't use multiple 'if' statements.
-   */
-  public void draw_section3() {
-
+  public void draw_section3() { // Prints section 3
+    for (int intX = 3; intX < 300; intX+=10) {
+      for (int intY = 303; intY < 600; intY+=10) {
+        fill(0);
+        if ((intY / 10) % 2 == 1){
+          fill(255);
+        }
+        noStroke();
+        rect(intX + 600, intY, 5, 5);
+      }
+    }
   }
 
-  /**
-   * Use the modulus operator and just one 'if' statement to select the color.
-   */
-  public void draw_section4() {
-
+  public void draw_section4() { // Prints section 4
+    for (int intX = 3; intX < 300; intX+=10) {
+      for (int intY = 303; intY < 600; intY+=10) {
+        fill(255);
+        if (((intX / 10) % 2 == 1) || ((intY / 10) % 2 == 0)){
+          fill(0);
+        }
+        noStroke();
+        rect(intX + 900, intY, 5, 5);
+      }
+    }
   }
 
-  /**
-   * Do NOT use 'if' statements to complete 5-8. Manipulate the loops instead
-   */
-  public void draw_section5() {
-
+  public void draw_section5() { // Prints section 5
+    for (int intRow = 0; intRow < 30; intRow++) {
+      for (int intColumn = 0; intColumn <= intRow; intColumn++) {        
+        fill(255);
+        noStroke();
+        rect(10 * intRow + 3, 293 - 10 * intColumn, 5, 5);
+      }
+    }
   }
 
-  public void draw_section6() {
-
+  public void draw_section6() { // Prints section 6
+    for (int intRow = 0; intRow < 30; intRow++) {
+      for (int intColumn = 0; intColumn <= intRow; intColumn++) {
+        fill(255);
+        noStroke();
+        rect(593 - 10 * intRow, 293 - 10 * intColumn, 5, 5);
+      }
+    }
   }
 
-  public void draw_section7() {
-
+  public void draw_section7() { // Prints section 7
+    for (int intRow = 0; intRow < 30; intRow++) {
+      for (int intColumn = 0; intColumn <= intRow; intColumn++) {
+        fill(255);
+        noStroke();
+        rect(893 - 10 * intRow, 3 + 10 * intColumn, 5, 5);
+      }
+    }
   }
   
-  public void draw_section8() {
-
+  public void draw_section8() { // Prints section 8
+    for (int intRow = 0; intRow < 30; intRow++) {
+      for (int intColumn = 0; intColumn <= intRow; intColumn++) {
+        fill(255);
+        noStroke();
+        rect(10 * intRow + 903, 3 + 10 * intColumn, 5, 5);
+      }
+    }
   }
 
 }
