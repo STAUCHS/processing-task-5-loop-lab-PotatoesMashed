@@ -1,7 +1,11 @@
 import processing.core.PApplet;
 
 public class Sketch extends PApplet {
-	
+	/**
+ * Main class to execute sketch
+ * George D.
+ *
+ */
 	
   /**
    * Called once at the beginning of execution, put your size all in this method
@@ -16,7 +20,7 @@ public class Sketch extends PApplet {
    * values here i.e background, stroke, fill etc.
    */
   public void setup() {
-    background(45, 150, 207);
+    background(45, 150, 207); // sets background color
   }
 
   /**
